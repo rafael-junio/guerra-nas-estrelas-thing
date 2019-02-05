@@ -7,13 +7,18 @@ window.addEventListener('load', e => {
 async function updateMovies() {
   const res = await fetch('https://swapi.co/api/films/');
   const json = await res.json();
-  var pos = json.results.indexOf('title');
-  
-  var titulo = json.results[3].title;
-
+  var movieDescription = '';
   p = document.createElement("p");
-  p.innerHTML = titulo;
+
+  for (let index = 0; index < json.results.length; index++) {
+
+    movieDescription += movieDescription + "Título: " +json.results[index].title + "<br />"
+                      + "Data de lançamento: " + json.results[index].release_date + "<br />"
+                      + "Diretor: " +json.results[index].director + "<br />"
+                      + "Sinopse: " + json.results[index].opening_crawl + "<br />" + "<br />";
+    
+
+  };
+  p.innerHTML = movieDescription;
   return document.body.appendChild(p);
-
-
-}
+};
