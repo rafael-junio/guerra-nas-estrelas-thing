@@ -1,0 +1,29 @@
+{
+  "name": "guerra-nas-estrelas-thing",
+  "version": "1.0.0",
+  "description": "StarWars app",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -c-1 -p 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafael-junio/guerra-nas-estrelas-thing.git"
+  },
+  "keywords": [
+    "starwars"
+  ],
+  "author": "Rafael Junio Xavier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafael-junio/guerra-nas-estrelas-thing/issues"
+  },
+  "homepage": "https://github.com/rafael-junio/guerra-nas-estrelas-thing#readme",
+  "dependencies": {
+    "angular": "^1.7.7",
+    "require": "^2.4.20",
+    "swapi-node": "^0.4.4",
+    "xyz-angular-swapi": "^0.1.0"
+  }
+}
