@@ -27,7 +27,7 @@ function updateSideBar(cont){
 
 //Atualiza as informações do filme de acordo com o seu número e o Json dos filmes
 async function updateMovies(cont, jsonMovies) {
-
+  let movieDescription = '';
   switch (cont) {
     case 0:
       movieDescription = "<img src='https://upload.wikimedia.org/wikipedia/pt/f/f6/Pôster_Star_Wars.jpg' width='280' height='425'>";
@@ -53,7 +53,7 @@ async function updateMovies(cont, jsonMovies) {
     default:
       break;
   }
-  let movieDescription = movieDescription + " <br />Filme nº: " + (cont + 1);
+  movieDescription = movieDescription + " <br />Filme nº: " + (cont + 1);
   movieDescription += "<br />" +"<strong>Título: </strong>" + jsonMovies.results[orderFilm[cont]].title + "<br />"
     + "<strong>Data de lançamento: </strong>" + jsonMovies.results[orderFilm[cont]].release_date + "<br />"
     + "<strong>Diretor: </strong>" + jsonMovies.results[orderFilm[cont]].director + "<br />"
@@ -136,30 +136,30 @@ async function updateSpecies(descriptionString) {
   return p.innerHTML = descriptionString;
 }
 // Cria os botões
-let button = document.createElement("button");
+var button = document.createElement("button");
 button.innerHTML = "Filme anterior";
 
-let body = document.getElementsByTagName("body")[0];
+var body = document.getElementsByTagName("body")[0];
 body.appendChild(button);
 
 button.addEventListener("click", function () {
   lastMovie();
 });
 
-let buttondes = document.createElement("button");
+var buttondes = document.createElement("button");
 buttondes.innerHTML = "Descrição completa";
 
-let body = document.getElementsByTagName("body")[0];
+var body = document.getElementsByTagName("body")[0];
 body.appendChild(buttondes);
 
 buttondes.addEventListener("click", function () {
   descriptionBool();
 });
 
-let button = document.createElement("button");
+var button = document.createElement("button");
 button.innerHTML = "Próximo Filme";
 
-let body = document.getElementsByTagName("body")[0];
+var body = document.getElementsByTagName("body")[0];
 body.appendChild(button);
 
 button.addEventListener("click", function () {
