@@ -21,7 +21,8 @@ async function update() {
 }
 
 //Função para navegar direto para um filme pelo nome.
-function updateSideBar(cont){
+function updateSideBar(cont2){
+  cont = cont2;
   updateMovies(cont, jsonMovies);
 }
 
@@ -74,7 +75,7 @@ async function updateMovies(cont, jsonMovies) {
 //a String movieDescription
 async function updatePeople(movieDescription) {
   let descriptionFull = "<strong>Personagens: </strong><br />";
-  for (let index = 0; index < jsonMovies.results[cont].characters.length; index++) {
+  for (let index = 0; index < jsonMovies.results[orderFilm[cont]].characters.length; index++) {
     let url = jsonMovies.results[orderFilm[cont]].characters[index];
     const resPeople = await fetch(url);
     const jsonPeople = await resPeople.json();
@@ -90,7 +91,7 @@ async function updatePeople(movieDescription) {
 //Atualiza os planetas
 async function updatePlanets(descriptionString) {
   let descriptionFull = "<br /><Strong>Planetas: </strong><br />";
-  for (let index = 0; index < jsonMovies.results[cont].planets.length; index++) {
+  for (let index = 0; index < jsonMovies.results[orderFilm[cont]].planets.length; index++) {
     let url = jsonMovies.results[orderFilm[cont]].planets[index];
     const resPlanets = await fetch(url);
     const jsonPlanets = await resPlanets.json();
@@ -106,7 +107,7 @@ async function updatePlanets(descriptionString) {
 //Atualiza as naves
 async function updateShips(descriptionString) {
   let descriptionFull = "<br /><Strong>Naves: </strong><br />";
-  for (let index = 0; index < jsonMovies.results[cont].starships.length; index++) {
+  for (let index = 0; index < jsonMovies.results[orderFilm[cont]].starships.length; index++) {
     let url = jsonMovies.results[orderFilm[cont]].starships[index];
     const resShips = await fetch(url);
     const jsonShips = await resShips.json();
@@ -122,7 +123,7 @@ async function updateShips(descriptionString) {
 //Atualiza as espécies
 async function updateSpecies(descriptionString) {
   let descriptionFull = "<br /><Strong>Espécies: </strong><br />";
-  for (let index = 0; index < jsonMovies.results[cont].species.length; index++) {
+  for (let index = 0; index < jsonMovies.results[orderFilm[cont]].species.length; index++) {
     let url = jsonMovies.results[orderFilm[cont]].species[index];
     const resSpecies = await fetch(url);
     const jsonSpecies = await resSpecies.json();
